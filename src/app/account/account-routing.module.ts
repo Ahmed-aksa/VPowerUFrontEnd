@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AccountComponent } from "./account.component";
+import {LoginComponent} from "./login/login.component";
+import {SignupComponent} from "./signup/signup.component";
 
 @NgModule({
     imports: [
@@ -10,7 +12,13 @@ import { AccountComponent } from "./account.component";
                 component: AccountComponent,
                 children: [
                     { path: '', redirectTo: 'login' },
-                   // { path: 'login', component: LoginComponent, canActivate: [AccountRouteGuard] },
+                  {
+                    path: 'login', component: LoginComponent
+                  },
+
+                  {
+                    path: 'signup', component: SignupComponent
+                  },
 
                 ]
             }
@@ -21,5 +29,5 @@ import { AccountComponent } from "./account.component";
     ]
 })
 export class AccountRoutingModule {
-  
+
 }
