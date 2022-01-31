@@ -1,1 +1,58 @@
-<h2>Login</h2>
+<section>
+  <div class="container-fluid">
+
+        <div class="login-card d-grid theme-form login-form">
+
+          <form id="loginForm" class=" login-form" method="post">
+
+
+            <div class="row g-0 ">
+              <div class="col-10 col-lg-9 mx-auto text-center">
+                <div class="logo mb-5 mb-md-0">
+                  <a href="index.html" title="vpoweru"><img class="logo-design" src="assets/images/VpowerU-Logo-01.svg" alt="mainlogo"></a>
+                </div>
+              </div>
+            </div>
+            <h3 class="fw-bold mb-2 text-center mt-4">Login to your Account</h3>
+            <p class="text-center">See what is going on with your business</p>
+            <div class="ry-field-with-icon name mb-3 position-relative main-login">
+
+              <label>Email</label>
+              <img src="assets/images/email.svg" alt="emailicon">
+
+              <div class="form-group-">
+                <input type="text" placeholder="Enter Email">
+              </div>
+            </div>
+
+            <div class="ry-field-with-icon email">
+              <img src="assets/images/password.svg" alt="passicon">
+
+              <label>Password</label>
+              <div class="form-group-">
+                <input type="password" placeholder="**********">
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-check">
+                  <input id="remember-me" name="remember" class="form-check-input" type="checkbox">
+                  <label class="form-check-label mb-0" for="remember-me">Remember Me</label>
+                </div>
+              </div>
+              <div class="col text-end fw-bold"><a [routerLink]= "['/forgot-password']"  class="link-secondary">Forgot Password ?</a></div>
+            </div>
+            <div class="d-grid my-2">
+              <button type="button" class="btn btn-labeled btn-primary w-100">
+                <span class="btn-label">                  <img class="me-2" src="assets/images/login.svg" alt="loginicon"></span>Login</button>
+            </div>
+
+          </form>
+          <!-- <p class="text-center text-muted mb-0">Not Registered Yet?<a class="link-primary mx-2" href="register.html">Create an account</a></p> -->
+          <p class="text-center text-muted mb-0">Not Registered Yet?<a class="link-primary mx-2 fw-bold" href="register.html">Create an account</a></p>
+
+        </div>
+      </div>
+
+</section>
