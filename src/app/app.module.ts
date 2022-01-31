@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AccountComponent} from "./account/account.component";
+import {AccountComponent} from "./Modules/account/account.component";
+import {AccountModule} from "./Modules/account/account.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {AccountComponent} from "./account/account.component";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]

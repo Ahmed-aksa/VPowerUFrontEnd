@@ -1,6 +1,6 @@
 import { Component, Injector, OnInit, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponentBase } from '../app-component-base';
+import { AppComponentBase } from '../../app-component-base';
 
 
 @Component({
@@ -12,16 +12,16 @@ import { AppComponentBase } from '../app-component-base';
 })
 export class AccountComponent extends AppComponentBase implements OnInit {
 
-   
+
     public constructor(
         injector: Injector,
         private _router: Router,
-      
+
     ) {
         super(injector);
     }
 
-  
+
 
     ngOnInit(): void {
     }
