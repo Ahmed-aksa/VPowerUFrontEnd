@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(25)]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
     });
+
   }
 
   loginUser() {
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
     //
     //
     // });
+    console.log(this.loginForm.value)
   }
 
 
