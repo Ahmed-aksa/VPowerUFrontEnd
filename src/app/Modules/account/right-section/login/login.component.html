@@ -3,7 +3,7 @@
 
         <div class="login-card d-grid theme-form login-form">
 
-          <form id="loginForm" class=" login-form" method="post">
+          <form [formGroup]="loginForm" id="loginForm" class=" login-form" method="post">
 
 
             <div class="row g-0 ">
@@ -21,7 +21,7 @@
               <img src="assets/images/email.svg" alt="emailicon">
 
               <div class="form-group-">
-                <input type="text" placeholder="Enter Email">
+                <input formControlName="email" name="email" type="text" class="form-control" placeholder="Enter Email">
               </div>
             </div>
 
@@ -30,7 +30,7 @@
 
               <label>Password</label>
               <div class="form-group-">
-                <input type="password" placeholder="**********">
+                <input formControlName="password" type="password" class="form-control " placeholder="*****">
               </div>
             </div>
 
