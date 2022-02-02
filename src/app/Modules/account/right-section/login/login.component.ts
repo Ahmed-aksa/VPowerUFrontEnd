@@ -21,12 +21,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginForm = this._formBuilder.group({
-      email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(25)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+      email: new FormControl('',Validators.required),
+      password: new FormControl('')
     });
 
   }
-
+  get loginFormControl() {
+    return this.loginForm.controls;
+  }
   loginUser() {
     // this.account_service.login(this.loginForm.value).subscribe((data) => {
     //

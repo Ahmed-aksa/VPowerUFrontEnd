@@ -6,12 +6,14 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ForgotPasswordComponent } from './right-section/forgot-password/forgot-password.component';
 import { LeftSectionComponent } from './left-section/left-section.component';
 import { RightSectionComponent } from './right-section/right-section.component';
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
   imports: [
     AccountRoutingModule,
     ReactiveFormsModule,
+    CommonModule,
   ],
   declarations: [
 
