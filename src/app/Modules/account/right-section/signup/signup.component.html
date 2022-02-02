@@ -48,9 +48,13 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="name" type="text" placeholder="Enter Customer Name">
+                        <input id="name" class="border-none" formControlName="name" type="text" placeholder="Enter Customer Name">
                       </div>
                     </div>
+                    <span class="text-danger"
+                  *ngIf="(signupForm.controls.name.touched) && signupForm.controls.name.errors?.required">
+                                Name is Required
+                            </span>
                   </div>
                   <div class="col-lg-6 col-sm-12">
                     <div class="ry-field-with-icon name mb-2">
@@ -61,11 +65,16 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="email" type="text" placeholder="Enter Customer Email">
+                        <input id="email" class="border-none" formControlName="email" type="text" placeholder="Enter Customer Email">
                        
                       </div>
                     </div>
+                    <span class="text-danger"
+                    *ngIf="(signupForm.controls.email.touched) && signupForm.controls.email.errors?.required">
+                                  Email is Required
+                              </span>
                   </div>
+               
                 </div>
 
 
@@ -79,10 +88,13 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="number" type="text" placeholder="9255555566565">
-                       
+                        <input id="number" class="border-none" formControlName="number" type="text" placeholder="9255555566565">
                       </div>
                     </div>
+                    <span class="text-danger"
+                    *ngIf="(signupForm.controls.number.touched) && signupForm.controls.number.errors?.required">
+                                  Number is Required
+                              </span>
                   </div>
                   <div class="col-lg-6 col-sm-12">
                     <div class="ry-field-with-icon name mb-2">
@@ -108,10 +120,13 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="password" type="text" placeholder="Enter Password">
-                        
+                        <input id="password" class="border-none" formControlName="password" type="text" placeholder="Enter Password">    
                       </div>
                     </div>
+                    <span class="text-danger"
+                    *ngIf="(signupForm.controls.password.touched) && signupForm.controls.password.errors?.required">
+                                  Password is Required
+                              </span>
                   </div>
                   <div class="col-lg-6 col-sm-12">
                     <div class="ry-field-with-icon name mb-2">
@@ -122,10 +137,13 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="cpassword" type="text" placeholder="Confirm Password">
-                        
+                        <input id="cpassword" class="border-none" formControlName="cpassword" type="text" placeholder="Confirm Password">      
                       </div>
                     </div>
+                    <span class="text-danger"
+                    *ngIf="(signupForm.controls.cpassword.touched) && signupForm.controls.cpassword.errors?.required">
+                                  Password does not match
+                              </span>
                   </div>
                 </div>
                 <div class="row">
@@ -138,10 +156,13 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input class="border-none" formControlName="address" type="text" placeholder="Address">
-                       
+                        <input id="address" class="border-none" formControlName="address" type="text" placeholder="Address">   
                       </div>
                     </div>
+                    <span class="text-danger"
+                    *ngIf="(signupForm.controls.address.touched) && signupForm.controls.address.errors?.required">
+                                  Address is Required
+                              </span>
                   </div>
 
                 </div>
