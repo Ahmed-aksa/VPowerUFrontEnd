@@ -49,7 +49,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="name" type="text" placeholder="Enter Customer Name">
-                        <span style="color:red" *ngIf="name && name.invalid && name.touched">Enter Valid Name</span>
+                        <span *ngIf="name && name.invalid && name.touched"></span>
                       </div>
                     </div>
                   </div>
@@ -63,7 +63,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="email" type="text" placeholder="Enter Customer Email">
-                        <span style="color:red" *ngIf="email && email.invalid && email.touched">Enter Valid Email</span>
+                       
                       </div>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="number" type="text" placeholder="9255555566565">
-                        <span style="color:red" *ngIf="number && number.invalid && number.touched">Enter Valid Phone Number</span>
+                       
                       </div>
                     </div>
                   </div>
@@ -93,7 +93,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="mpan" type="text" placeholder="Meter Point Administration Number">
-                        <span style="color:red" *ngIf="mpan && mpan.invalid && mpan.touched">Enter Valid MPAN</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="password" type="text" placeholder="Enter Password">
-                        <span style="color:red" *ngIf="password && password.invalid && password.touched">Enter Valid Password</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -124,7 +124,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="cpassword" type="text" placeholder="Confirm Password">
-                        <span style="color:red" *ngIf="cpassword && cpassword.invalid && cpassword.touched">Enter Valid Password</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -140,7 +140,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="address" type="text" placeholder="Address">
-                        <span style="color:red" *ngIf="address && address.invalid && address.touched">Enter Valid Address</span>
+                       
                       </div>
                     </div>
                   </div>
@@ -158,7 +158,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="pdik" type="text" placeholder="Estimated peak demand in KWh">
-                        <span style="color:red" *ngIf="pdik && pdik.invalid && pdik.touched">Enter Valid Peak demand in KWh</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -170,7 +170,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="mdik" type="text" placeholder="Estimated minimum demand in KWh">
-                        <span style="color:red" *ngIf="mdik && mdik.invalid && mdik.touched">Enter Valid Minimum demand in KWh</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -185,7 +185,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="adik" type="text" placeholder="Estimated annual demand in KWh">
-                        <span style="color:red" *ngIf="adik && adik.invalid && adik.touched">Enter Valid Annual demand in KWh</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -196,7 +196,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="uflex" type="text" placeholder="Estimated Upward flexibility">
-                        <span style="color:red" *ngIf="uflex && uflex.invalid && uflex.touched">Enter Valid Upward flexibility</span>
+                       
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@
 
                       <div class="form-group">
                         <input class="border-none" formControlName="dflex" type="text" placeholder="Estimated Downward flexibility">
-                        <span style="color:red" *ngIf="dflex && dflex.invalid && dflex.touched">Enter Valid Downward flexibility</span>
+                        
                       </div>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
                                  placeholder="Select Option" onfocus="this.select()"
                                  style="position:absolute;top:0px;left:0px;width:183px;width:180px\9; ">
                           <input name="idValue" id="idValue" type="hidden">
-                          <span style="color:red" *ngIf="ftype && ftype.invalid && ftype.touched">Enter Valid Flexibility Type</span>
+                         
                         </div>
                       </div>
                     </div>
@@ -277,4 +277,7 @@
 
         </div>
 
+
+
+        
 </section>
