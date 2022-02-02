@@ -48,11 +48,11 @@
                   <label class="form-check-label mb-0" for="remember-me">Remember Me</label>
                 </div>
               </div>
-              
+
               <div class="col text-end fw-bold"><a [routerLink]= "['/forgot-password']"  class="link-secondary">Forgot Password ?</a></div>
             </div>
             <div class="d-grid my-2">
-              <button (click)="loginUser()" type="button" class="btn btn-labeled btn-primary w-100">
+              <button (click)="loginUser()" [disabled]="!loginForm.valid" type="button" class="btn btn-labeled btn-primary w-100">
                 <span class="btn-label">                  <img class="me-2" src="assets/images/login.svg" alt="loginicon"></span>Login</button>
             </div>
 
