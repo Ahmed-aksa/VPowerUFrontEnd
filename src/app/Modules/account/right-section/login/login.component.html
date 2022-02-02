@@ -16,25 +16,21 @@
             <p class="text-center">See what is going on with your business</p>
             <div class="ry-field-with-icon name mb-3 position-relative main-login">
 
-              <label>Email</label>
+              <label>Email </label>
               <img src="assets/images/email.svg" alt="emailicon">
 
               <div class="form-group-">
                 <input id="email" formControlName="email" name="email" type="text" placeholder="Enter Email">
-
-              </div>
-              <span class="text-danger"
-                    *ngIf="(loginFormControl.email.touched) && loginFormControl.email.errors?.required">
-                                email is required
-                            </span>
+              </div> 
             </div>
+         
 
             <div class="ry-field-with-icon email">
               <img src="assets/images/password.svg" alt="passicon">
 
               <label>Password</label>
               <div class="form-group-">
-                <input formControlName="password" type="password" placeholder="*****">
+                <input id="password" formControlName="password" type="password" placeholder="*****">
               </div>
             </div>
 
