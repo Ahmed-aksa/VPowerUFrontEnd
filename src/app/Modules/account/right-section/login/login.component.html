@@ -20,8 +20,13 @@
               <img src="assets/images/email.svg" alt="emailicon">
 
               <div class="form-group-">
-                <input formControlName="email" name="email" type="text"  placeholder="Enter Email">
+                <input id="email" formControlName="email" name="email" type="text" placeholder="Enter Email">
+
               </div>
+              <span class="text-danger"
+                    *ngIf="(loginFormControl.email.touched) && loginFormControl.email.errors?.required">
+                                email is required
+                            </span>
             </div>
 
             <div class="ry-field-with-icon email">
