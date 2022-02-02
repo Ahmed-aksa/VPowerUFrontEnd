@@ -23,12 +23,12 @@
                 <input id="email" formControlName="email" name="email" type="text" placeholder="Enter Email">
 
               </div>
-              <span class="text-danger"
-                    *ngIf="(loginFormControl.email.touched) && loginFormControl.email.errors?.required">
-                                email is required
-                            </span>
-            </div>
 
+            </div>
+            <span class="text-danger"
+                  *ngIf="(loginFormControl.email.touched) && loginFormControl.email.errors?.required">
+                                Email is Required
+                            </span>
             <div class="ry-field-with-icon email">
               <img src="assets/images/password.svg" alt="passicon">
 
@@ -37,7 +37,10 @@
                 <input formControlName="password" type="password" placeholder="*****">
               </div>
             </div>
-
+            <span class="text-danger"
+                  *ngIf="(loginFormControl.password.touched) && loginFormControl.password.errors?.required">
+                                Password is Required
+                            </span>
             <div class="row mt-3">
               <div class="col">
                 <div class="form-check">
