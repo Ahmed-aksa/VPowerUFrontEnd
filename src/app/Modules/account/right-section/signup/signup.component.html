@@ -278,7 +278,7 @@
                     </button>
                   </a>
                   <a id="NextID">
-                    <button (click)="submitForm()" class="btn btn-primary btn-next" type="button"><img class="me-2"
+                    <button (click)="submitForm()" [class.disabled]="submitForm ? null: true"  class="btn btn-primary btn-next" type="button"><img class="me-2"
                                                                                 src="assets/images/next.svg"
                                                                                 alt="nexticon">Next
                     </button>

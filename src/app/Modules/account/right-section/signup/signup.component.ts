@@ -18,12 +18,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      number: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      number: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
       mpan: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      cpassword: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
+      cpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
       address: new FormControl('', [Validators.required]),
       pdik: new FormControl('', [Validators.required]),
       mdik: new FormControl('', [Validators.required]),
@@ -35,6 +35,7 @@ export class SignupComponent implements OnInit {
   }
 
   submitForm() {
+    if (this.signupForm.valid)
     console.log(this.signupForm.value)
   }
 }
