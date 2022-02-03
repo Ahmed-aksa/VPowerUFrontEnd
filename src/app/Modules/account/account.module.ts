@@ -7,6 +7,7 @@ import { ForgotPasswordComponent } from './right-section/forgot-password/forgot-
 import { LeftSectionComponent } from './left-section/left-section.component';
 import { RightSectionComponent } from './right-section/right-section.component';
 import {CommonModule} from "@angular/common";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {CommonModule} from "@angular/common";
     AccountRoutingModule,
     ReactiveFormsModule,
     CommonModule,
+    FormsModule,
   ],
   declarations: [
 
