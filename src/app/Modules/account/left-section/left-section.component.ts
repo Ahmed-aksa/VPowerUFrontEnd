@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare const myTest: any;
 @Component({
   selector: 'app-left-section',
   templateUrl: './left-section.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    
+   
+  }
 
   ngOnInit(): void {
+    myTest();
   }
 
 }

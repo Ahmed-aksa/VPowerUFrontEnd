@@ -44,7 +44,8 @@
               "src/assets/js/bootstrap/popper.min.js",
               "src/assets/js/bootstrap/bootstrap.min.js",
               "src/assets/js/script.js",
-              "src/assets/js/signupJS.js"
+              "src/assets/js/signupJS.js",
+              "src/assets/js/custom.js"
 
             ]
           },
