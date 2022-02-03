@@ -24,6 +24,14 @@ export class SignupComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
       cpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
       address: new FormControl('', [Validators.required]),
+      mpan: new FormControl('', ),
+      pdik: new FormControl('', ),
+      mdik: new FormControl('', ),
+      adik: new FormControl('', ),
+      uflex: new FormControl('', ),
+      dflex: new FormControl('', ),
+      ftype: new FormControl('', ),
+      
 
     });
   }

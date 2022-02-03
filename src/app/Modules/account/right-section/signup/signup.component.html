@@ -1,7 +1,7 @@
 <section>
         <div class="row register-box">
           <div class="col-lg-11 offset-sm-0 mobile-view">
-            <form  [formGroup]="signupForm" id="loginForm" method="post">
+            <form  [formGroup]="signupForm" id="loginForm" method="post" (ngSubmit)="submitForm()">
               <div class="row g-0  ">
                 <div class="col-10 col-lg-9 mx-auto text-center">
                   <div class="logo mt-4 mb-3 mb-md-0">
@@ -120,7 +120,7 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input id="password" class="border-none" formControlName="password" type="text" placeholder="Enter Password">
+                        <input id="password" class="border-none" formControlName="password" type="password" placeholder="Enter Password">
                       </div>
                     </div>
                     <span class="text-danger"
@@ -137,7 +137,7 @@
                                                 </span></label>
 
                       <div class="form-group">
-                        <input id="cpassword" class="border-none" formControlName="cpassword" type="text" placeholder="Confirm Password">
+                        <input id="cpassword" class="border-none" formControlName="cpassword" type="password" placeholder="Confirm Password">
                       </div>
                     </div>
                     <span class="text-danger"

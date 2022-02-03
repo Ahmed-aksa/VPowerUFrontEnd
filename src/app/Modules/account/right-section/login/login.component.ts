@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   get loginFormControl() {
     return this.loginForm.controls;
   }
+  
   loginUser() {
     // this.account_service.login(this.loginForm.value).subscribe((data) => {
     //
