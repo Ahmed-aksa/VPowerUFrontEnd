@@ -10,6 +10,8 @@ import {Router} from "@angular/router";
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup
+  submited=false;
+  IsFirstStep=true;
   constructor(
     private account_service: AccountService,
     private _formBuilder: FormBuilder,
@@ -37,7 +39,11 @@ export class SignupComponent implements OnInit {
   }
 
   submitForm() {
-    if (this.signupForm.valid)
+    debugger
+    this.submited=true;
+    if (this.signupForm.valid){
+      this.IsFirstStep=false;
+    }
     console.log(this.signupForm.value)
   }
 }
