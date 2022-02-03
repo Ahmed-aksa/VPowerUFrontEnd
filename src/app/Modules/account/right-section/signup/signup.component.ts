@@ -20,11 +20,11 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
+      name:['', [Validators.required, ]],
       email: new FormControl('', [Validators.required, Validators.email]),
-      number: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
-      cpassword: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
+      number: new FormControl('', [Validators.required,]),
+      password: new FormControl('', [Validators.required,]),
+      cpassword: new FormControl('', [Validators.required,]),
       address: new FormControl('', [Validators.required]),
       mpan: new FormControl('', ),
       pdik: new FormControl('', ),
@@ -33,17 +33,31 @@ export class SignupComponent implements OnInit {
       uflex: new FormControl('', ),
       dflex: new FormControl('', ),
       ftype: new FormControl('', ),
-      
-
     });
   }
+
+  get f() { return this.signupForm.controls; }
+
 
   submitForm() {
     debugger
     this.submited=true;
-    if (this.signupForm.valid){
-      this.IsFirstStep=false;
+    if (this.signupForm.invalid){
+      return  
     }
     console.log(this.signupForm.value)
   }
+  onSubmit() {
+    debugger;
+    this.submited = true;
+
+    // stop here if form is invalid
+    if (this.signupForm.invalid) {
+        return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signupForm.value, null, 4));
+}
+
 }

@@ -1,7 +1,7 @@
 <section>
   <div class="row register-box">
     <div class="col-lg-11 offset-sm-0 mobile-view">
-      <form [formGroup]="signupForm" id="loginForm" method="post" (ngSubmit)="submitForm()">
+      <form [formGroup]="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="row g-0  ">
           <div class="col-10 col-lg-9 mx-auto text-center">
             <div class="logo mt-4 mb-3 mb-md-0">
@@ -38,7 +38,7 @@
 
         <div  *ngIf="IsFirstStep">
           <div class="row">
-            <div class="col-lg-6 col-sm-12">
+            <div class="col-lg-6 col-sm-12" >
               <div class="ry-field-with-icon name mb-2">
                 <img src="assets/images/user.svg" alt="icon">
 
@@ -51,10 +51,14 @@
                     placeholder="Enter Customer Name">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited || ((signupForm.controls.name.touched) && signupForm.controls.name.errors?.required)">
+              <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.name.errors?.required">Title is required</div>
+            </div>
+
+              <!-- <span class="text-danger"
+                *ngIf="submited && ((signupForm.controls.name.touched) && signupForm.controls.name.errors?.required)">
                 Name is Required
-              </span>
+              </span> -->
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -71,7 +75,7 @@
                 </div>
               </div>
               <span class="text-danger"
-                *ngIf="(signupForm.controls.email.touched) && signupForm.controls.email.errors?.required">
+                *ngIf="submited &&((signupForm.controls.email.touched) && signupForm.controls.email.errors?.required)">
                 Email is Required
               </span>
             </div>
@@ -94,7 +98,7 @@
                 </div>
               </div>
               <span class="text-danger"
-                *ngIf="(signupForm.controls.number.touched) && signupForm.controls.number.errors?.required">
+                *ngIf="submited &&((signupForm.controls.number.touched) && signupForm.controls.number.errors?.required)">
                 Number is Required
               </span>
             </div>
@@ -128,7 +132,7 @@
                 </div>
               </div>
               <span class="text-danger"
-                *ngIf="(signupForm.controls.password.touched) && signupForm.controls.password.errors?.required">
+                *ngIf="submited && ((signupForm.controls.password.touched) && signupForm.controls.password.errors?.required)">
                 Password is Required
               </span>
             </div>
@@ -146,7 +150,7 @@
                 </div>
               </div>
               <span class="text-danger"
-                *ngIf="(signupForm.controls.cpassword.touched) && signupForm.controls.cpassword.errors?.required">
+                *ngIf="submited &&((signupForm.controls.cpassword.touched) && signupForm.controls.cpassword.errors?.required)">
                 Password does not match
               </span>
             </div>
@@ -165,7 +169,7 @@
                 </div>
               </div>
               <span class="text-danger"
-                *ngIf="(signupForm.controls.address.touched) && signupForm.controls.address.errors?.required">
+                *ngIf="submited && ((signupForm.controls.address.touched) && signupForm.controls.address.errors?.required)">
                 Address is Required
               </span>
             </div>
@@ -288,8 +292,8 @@
               </button>
             </a>
             <a id="NextID">
-              <button (click)="submitForm()" [class.disabled]="submitForm ? null: true" class="btn btn-primary btn-next"
-                type="button"><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+              <button  class="btn btn-primary btn-next"
+               ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
                 <span  *ngIf="IsFirstStep">Next </span>
                 <span  *ngIf="!IsFirstStep">Submit</span>
               </button>
