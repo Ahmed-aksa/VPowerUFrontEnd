@@ -10,12 +10,20 @@ import {Router} from "@angular/router";
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup
+  displayMessage: { [key: string]: string } = {};
   submited=false;
   IsFirstStep=true;
+  validationMessages: { name: { required: string; name: string; }; };
   constructor(
     private account_service: AccountService,
     private _formBuilder: FormBuilder,
     private router: Router) {
+      this.validationMessages = {
+        name: {
+          required: 'Required',
+          name: 'This name is invalid'
+        }
+      };
   }
 
   ngOnInit(): void {
@@ -36,28 +44,28 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  get f() { return this.signupForm.controls; }
+  //get f() { return this.signupForm.controls; }
 
 
   submitForm() {
     debugger
     this.submited=true;
     if (this.signupForm.invalid){
-      return  
+      return;  
     }
     console.log(this.signupForm.value)
   }
-  onSubmit() {
-    debugger;
-    this.submited = true;
+//   onSubmit() {
+//     debugger;
+//     this.submited = true;
 
-    // stop here if form is invalid
-    if (this.signupForm.invalid) {
-        return;
-    }
+//     // stop here if form is invalid
+//     if (this.signupForm.invalid) {
+//         return;
+//     }
 
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signupForm.value, null, 4));
-}
+//     // display form values on success
+//     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signupForm.value, null, 4));
+// }
 
 }

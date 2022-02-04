@@ -1,7 +1,7 @@
 <section>
   <div class="row register-box">
     <div class="col-lg-11 offset-sm-0 mobile-view">
-      <form [formGroup]="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="signupForm" [formGroup]="signupForm" (ngSubmit)="submitForm()">
         <div class="row g-0  ">
           <div class="col-10 col-lg-9 mx-auto text-center">
             <div class="logo mt-4 mb-3 mb-md-0">
@@ -36,9 +36,9 @@
 
         </div>
 
-        <div  *ngIf="IsFirstStep">
+        <div *ngIf="IsFirstStep">
           <div class="row">
-            <div class="col-lg-6 col-sm-12" >
+            <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
                 <img src="assets/images/user.svg" alt="icon">
 
@@ -51,14 +51,14 @@
                     placeholder="Enter Customer Name">
                 </div>
               </div>
-              <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
+              <!-- <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
                 <div *ngIf="f.name.errors?.required">Title is required</div>
-            </div>
+              </div> -->
 
-              <!-- <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.name.touched) && signupForm.controls.name.errors?.required)">
+              <span class="text-danger"
+                *ngIf="submited && ((signupForm.controls.name.touched) && (signupForm.controls.name.invalid ) && signupForm.controls.name.errors?.required)">
                 Name is Required
-              </span> -->
+              </span>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -127,7 +127,7 @@
                   </span></label>
 
                 <div class="form-group">
-                  <input id="password" class="border-none" formControlName="password" type="password"
+                  <input id="password" class="border-none"  formControlName="password" type="password"
                     placeholder="Enter Password">
                 </div>
               </div>
@@ -177,7 +177,7 @@
           </div>
         </div>
 
-        <div style="display: none;"  *ngIf="!IsFirstStep" >
+        <div style="display: none;" *ngIf="!IsFirstStep">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon- name mb-2">
@@ -287,15 +287,14 @@
         <div class="row">
           <div class="col-lg-12 col-sm-12 text-end btns">
             <a id="backbnt">
-              <button  *ngIf="!IsFirstStep" class="btn back-btn mx-2" type="button"><img class="me-2" src="assets/images/back.svg"
-                  alt="backicon">Back
+              <button *ngIf="!IsFirstStep" class="btn back-btn mx-2" type="button"><img class="me-2"
+                  src="assets/images/back.svg" alt="backicon">Back
               </button>
             </a>
             <a id="NextID">
-              <button  class="btn btn-primary btn-next"
-               ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-                <span  *ngIf="IsFirstStep">Next </span>
-                <span  *ngIf="!IsFirstStep">Submit</span>
+              <button class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+                <span *ngIf="IsFirstStep">Next </span>
+                <span *ngIf="!IsFirstStep">Submit</span>
               </button>
             </a>
 
