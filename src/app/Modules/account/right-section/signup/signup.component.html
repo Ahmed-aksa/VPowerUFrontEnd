@@ -74,10 +74,9 @@
 
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.email.touched) && signupForm.controls.email.errors?.required)">
-                Email is Required
-              </span>
+              <div *ngIf="submited && f.email.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.email.errors?.required">Email is required</div>
+              </div>
             </div>
 
           </div>
@@ -97,10 +96,9 @@
                     placeholder="9255555566565">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.number.touched) && signupForm.controls.number.errors?.required)">
-                Number is Required
-              </span>
+              <div *ngIf="submited && f.number.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.number.errors?.required">Number is required</div>
+              </div>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -131,10 +129,9 @@
                     placeholder="Enter Password">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.password.touched) && signupForm.controls.password.errors?.required)">
-                Password is Required
-              </span>
+              <div *ngIf="submited && f.password.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.password.errors?.required">Password is required</div>
+              </div>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -149,10 +146,10 @@
                     placeholder="Confirm Password">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.cpassword.touched) && signupForm.controls.cpassword.errors?.required)">
-                Password does not match
-              </span>
+              <div *ngIf="submited && f.cpassword.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.cpassword.errors?.required">Password is required</div>
+
+              </div>
             </div>
           </div>
           <div class="row">
@@ -168,10 +165,10 @@
                   <input id="address" class="border-none" formControlName="address" type="text" placeholder="Address">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.address.touched) && signupForm.controls.address.errors?.required)">
-                Address is Required
-              </span>
+              <div *ngIf="submited && f.address.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.address.errors?.required">Address is required</div>
+
+              </div>
             </div>
 
           </div>

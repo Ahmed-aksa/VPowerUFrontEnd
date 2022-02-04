@@ -12,6 +12,7 @@ export class SignupComponent implements OnInit {
   signupForm!: FormGroup
   submited=false;
   IsFirstStep=true;
+  passwordMatch=false;
   constructor(
     private account_service: AccountService,
     private _formBuilder: FormBuilder,
@@ -38,22 +39,15 @@ export class SignupComponent implements OnInit {
 
   get f() { return this.signupForm.controls; }
 
-
-  submitForm() {
-    debugger
-    this.submited=true;
-    if (this.signupForm.invalid){
-      return  
-    }
-    console.log(this.signupForm.value)
-  }
   onSubmit() {
-    debugger;
     this.submited = true;
+    if (this.signupForm.value.password != this.signupForm.value.cpassword){
+      this.passwordMatch = true;
+    }
 
     // stop here if form is invalid
     if (this.signupForm.invalid) {
-        return;
+       return
     }
 
     // display form values on success
