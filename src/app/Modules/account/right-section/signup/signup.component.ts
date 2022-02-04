@@ -41,10 +41,6 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
-    if (this.signupForm.value.password != this.signupForm.value.cpassword){
-      this.passwordMatch = true;
-    }
-
     // stop here if form is invalid
     if (this.signupForm.invalid) {
        return
