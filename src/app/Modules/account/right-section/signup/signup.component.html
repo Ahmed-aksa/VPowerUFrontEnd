@@ -144,6 +144,7 @@
               </div>
               <div *ngIf="submited && f.cpassword.errors" style="display: block !important;" class="invalid-feedback">
                 <div *ngIf="f.cpassword.errors?.required">Password is required</div>
+                <div *ngIf="f.cpassword.errors?.MustMatch">Password Doesn't Match</div>
 
               </div>
             </div>
@@ -161,7 +162,7 @@
                   <input id="address" class="border-none" formControlName="address" type="text" placeholder="Address">
                 </div>
               </div>
-              <div *ngIf="submited && f.address.errors" style="display: block !important;" class="invalid-feedback">
+              <div *ngIf="submited && f.address.errors  ||  f.address.dirty || f.address.touched" style="display: block !important;" class="invalid-feedback">
                 <div *ngIf="f.address.errors?.required">Address is required</div>
 
               </div>
