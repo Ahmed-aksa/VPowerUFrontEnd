@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
       }
       ,
       {
-        Validators: this.MustMatch('password','cpassword')
+        validators: this.MustMatch('password','cpassword')
       });
   }
 
@@ -49,9 +49,6 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
        return
     }
-
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signupForm.value, null, 4));
 }
 
  MustMatch(password: string, cPassword: string) {
