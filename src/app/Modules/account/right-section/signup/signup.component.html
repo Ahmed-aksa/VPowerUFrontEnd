@@ -1,7 +1,7 @@
 <section>
   <div class="row register-box">
     <div class="col-lg-11 offset-sm-0 mobile-view">
-      <form [formGroup]="signupForm" [formGroup]="signupForm" (ngSubmit)="submitForm()">
+      <form [formGroup]="signupForm" (ngSubmit)=" onSubmit()">
         <div class="row g-0  ">
           <div class="col-10 col-lg-9 mx-auto text-center">
             <div class="logo mt-4 mb-3 mb-md-0">
@@ -36,7 +36,7 @@
 
         </div>
 
-        <div *ngIf="IsFirstStep">
+        <div id="first-step">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -51,15 +51,11 @@
                     placeholder="Enter Customer Name">
                 </div>
               </div>
-              <!-- <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
-                <div *ngIf="f.name.errors?.required">Title is required</div>
-              </div> -->
-
-              <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.name.touched) && (signupForm.controls.name.invalid ) && signupForm.controls.name.errors?.required)">
-                Name is Required
-              </span>
+              <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.name.errors?.required">Name is required</div>
+              </div>
             </div>
+
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
                 <img src="assets/images/email.svg" alt="icon">
@@ -74,10 +70,9 @@
 
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.email.touched) && signupForm.controls.email.errors?.required)">
-                Email is Required
-              </span>
+              <div *ngIf="submited && f.email.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.email.errors?.required">Email is required</div>
+              </div>
             </div>
 
           </div>
@@ -97,10 +92,9 @@
                     placeholder="9255555566565">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.number.touched) && signupForm.controls.number.errors?.required)">
-                Number is Required
-              </span>
+              <div *ngIf="submited && f.number.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.number.errors?.required">Number is required</div>
+              </div>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -131,10 +125,9 @@
                     placeholder="Enter Password">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.password.touched) && signupForm.controls.password.errors?.required)">
-                Password is Required
-              </span>
+              <div *ngIf="submited && f.password.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.password.errors?.required">Password is required</div>
+              </div>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -149,10 +142,10 @@
                     placeholder="Confirm Password">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited &&((signupForm.controls.cpassword.touched) && signupForm.controls.cpassword.errors?.required)">
-                Password does not match
-              </span>
+              <div *ngIf="submited && f.cpassword.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.cpassword.errors?.required">Password is required</div>
+
+              </div>
             </div>
           </div>
           <div class="row">
@@ -168,16 +161,16 @@
                   <input id="address" class="border-none" formControlName="address" type="text" placeholder="Address">
                 </div>
               </div>
-              <span class="text-danger"
-                *ngIf="submited && ((signupForm.controls.address.touched) && signupForm.controls.address.errors?.required)">
-                Address is Required
-              </span>
+              <div *ngIf="submited && f.address.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.address.errors?.required">Address is required</div>
+
+              </div>
             </div>
 
           </div>
         </div>
 
-        <div style="display: none;" *ngIf="!IsFirstStep">
+        <div style="display: none;" id="second-step">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon- name mb-2">
@@ -287,14 +280,14 @@
         <div class="row">
           <div class="col-lg-12 col-sm-12 text-end btns">
             <a id="backbnt">
-              <button *ngIf="!IsFirstStep" class="btn back-btn mx-2" type="button"><img class="me-2"
+              <button class="btn back-btn mx-2" type="button"><img class="me-2"
                   src="assets/images/back.svg" alt="backicon">Back
               </button>
             </a>
             <a id="NextID">
-              <button class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-                <span *ngIf="IsFirstStep">Next </span>
-                <span *ngIf="!IsFirstStep">Submit</span>
+              <button class="btn btn-primary btn-next" [disabled]="!signupForm.valid" (click)=" onSubmit()" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">Next
+                <!-- <span *ngIf="IsFirstStep">Next </span>
+                <span *ngIf="!IsFirstStep">Submit</span> -->
               </button>
             </a>
 
