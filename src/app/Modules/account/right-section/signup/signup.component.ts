@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup
   submited=false;
-  IsFirstStep=true;
   passwordMatch=false;
   constructor(
     private account_service: AccountService,
@@ -44,11 +43,8 @@ export class SignupComponent implements OnInit {
   get f() { return this.signupForm.controls; }
 
   onSubmit() {
+    debugger
     this.submited = true;
-    // stop here if form is invalid
-    if (this.signupForm.invalid) {
-       return
-    }
 }
 
  MustMatch(password: string, cPassword: string) {

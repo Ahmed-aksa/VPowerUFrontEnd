@@ -13,7 +13,6 @@
         <h3 class="fw-bold mb-2 text-center mt-3">Register Now</h3>
         <p class="text-center mb-4">See what is going on with your business</p>
         <div class="d-flex wizard-section mx-auto mb-2">
-
           <a id="backbnt-">
             <div class="circle-design">
               <img src="assets/images/user-pin.svg" alt="circle">
@@ -21,7 +20,6 @@
           </a>
 
           <div id="line-design" class=" separator">
-
           </div>
           <a id="image">
             <div id="NextID-" class="circle-other">
@@ -36,7 +34,7 @@
 
         </div>
 
-        <div *ngIf="IsFirstStep">
+        <div id="first-step" >
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -171,7 +169,7 @@
           </div>
         </div>
 
-        <div style="display: none;" *ngIf="!IsFirstStep">
+        <div id="second-step" style="display: none;">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon- name mb-2">
@@ -281,14 +279,13 @@
         <div class="row">
           <div class="col-lg-12 col-sm-12 text-end btns">
             <a id="backbnt">
-              <button *ngIf="!IsFirstStep" class="btn back-btn mx-2" type="button"><img class="me-2"
+              <button  class="btn back-btn mx-2" type="button"><img class="me-2"
                   src="assets/images/back.svg" alt="backicon">Back
               </button>
             </a>
             <a id="NextID">
-              <button class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-                <span *ngIf="IsFirstStep">Next </span>
-                <span *ngIf="!IsFirstStep">Submit</span>
+              <button  class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+               Next
               </button>
             </a>
           </div>
