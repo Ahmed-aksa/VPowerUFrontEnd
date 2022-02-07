@@ -44,9 +44,6 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
-    if(this.signupForm.valid){
-      return console.log(this.signupForm.value)
-    }
 }
 
  MustMatch(password: string, cPassword: string) {
