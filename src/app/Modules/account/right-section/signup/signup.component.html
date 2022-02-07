@@ -45,12 +45,12 @@
                   </span></label>
 
                 <div class="form-group">
-                  <input id="name" class="border-none" formControlName="name" type="text"
+                  <input id="name" class="border-none" formControlName="Name" type="text"
                     placeholder="Enter Customer Name">
                 </div>
               </div>
-              <div *ngIf="submited && f.name.errors" style="display: block !important;" class="invalid-feedback">
-                <div *ngIf="f.name.errors?.required">Name is required</div>
+              <div *ngIf="submited && f.Name.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.Name.errors?.required">Name is required</div>
               </div>
             </div>
 
@@ -63,13 +63,13 @@
                   </span></label>
 
                 <div class="form-group">
-                  <input id="email" class="border-none" formControlName="email" type="text"
+                  <input id="email" class="border-none" formControlName="Email" type="text"
                     placeholder="Enter Customer Email">
 
                 </div>
               </div>
-              <div *ngIf="submited && f.email.errors" style="display: block !important;" class="invalid-feedback">
-                <div *ngIf="f.email.errors?.required">Email is required</div>
+              <div *ngIf="submited && f.Email.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.Email.errors?.required">Email is required</div>
               </div>
             </div>
 
@@ -86,12 +86,12 @@
                   </span></label>
 
                 <div class="form-group">
-                  <input id="number" class="border-none" formControlName="number" type="text"
+                  <input id="number" class="border-none" formControlName="PhoneNumber" type="text"
                     placeholder="9255555566565">
                 </div>
               </div>
-              <div *ngIf="submited && f.number.errors" style="display: block !important;" class="invalid-feedback">
-                <div *ngIf="f.number.errors?.required">Number is required</div>
+              <div *ngIf="submited && f.PhoneNumber.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.PhoneNumber.errors?.required">Number is required</div>
               </div>
             </div>
             <div class="col-lg-6 col-sm-12">
@@ -119,12 +119,12 @@
                   </span></label>
 
                 <div class="form-group">
-                  <input id="password" class="border-none"  formControlName="password" type="password"
+                  <input id="password" class="border-none"  formControlName="Password" type="password"
                     placeholder="Enter Password">
                 </div>
               </div>
-              <div *ngIf="submited && f.password.errors" style="display: block !important;" class="invalid-feedback">
-                <div *ngIf="f.password.errors?.required">Password is required</div>
+              <div *ngIf="submited && f.Password.errors" style="display: block !important;" class="invalid-feedback">
+                <div *ngIf="f.Password.errors?.required">Password is required</div>
               </div>
             </div>
             <div class="col-lg-6 col-sm-12">
@@ -178,7 +178,7 @@
                 <label>Peak demand in KWh</label>
 
                 <div class="form-group">
-                  <input class="border-none" formControlName="pdik" type="text"
+                  <input class="border-none" formControlName="PeakDemand" type="text"
                     placeholder="Estimated peak demand in KWh">
 
                 </div>
@@ -191,7 +191,7 @@
                 <label>Minimum demand in KWh</label>
 
                 <div class="form-group">
-                  <input class="border-none" formControlName="mdik" type="text"
+                  <input class="border-none" formControlName="MinimumDemand" type="text"
                     placeholder="Estimated minimum demand in KWh">
 
                 </div>
@@ -207,7 +207,7 @@
                 <label>Annual demand in KWh</label>
 
                 <div class="form-group">
-                  <input class="border-none" formControlName="adik" type="text"
+                  <input class="border-none" formControlName="AnnualDemand" type="text"
                     placeholder="Estimated annual demand in KWh">
 
                 </div>
@@ -219,7 +219,7 @@
                 <label>Upward flexibility</label>
 
                 <div class="form-group">
-                  <input class="border-none" formControlName="uflex" type="text"
+                  <input class="border-none" formControlName="UpwardFlexiblity" type="text"
                     placeholder="Estimated Upward flexibility">
 
                 </div>
@@ -235,7 +235,7 @@
                 <label>Downward flexibility</label>
 
                 <div class="form-group">
-                  <input class="border-none" formControlName="dflex" type="text"
+                  <input class="border-none" formControlName="DownwardFlexiblity" type="text"
                     placeholder="Estimated Downward flexibility">
 
                 </div>
@@ -255,7 +255,7 @@
                       <option value="two">two</option>
                       <option value="three">three</option>
                     </select>
-                    <input class="drop-down-input" formControlName="ftype" type="text" name="displayValue"
+                    <input class="drop-down-input" formControlName="FlexiblityType" type="text" name="displayValue"
                       id="displayValue" placeholder="Select Option" onfocus="this.select()"
                       style="position:absolute;top:0px;left:0px;width:183px;width:180px\9; ">
                     <input name="idValue" id="idValue" type="hidden">

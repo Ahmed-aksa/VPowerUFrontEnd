@@ -20,19 +20,19 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
-      name:['', [Validators.required, ]],
-      email: new FormControl('', [Validators.required, Validators.email]),
-      number: new FormControl('', [Validators.required,]),
-        password: new FormControl('', [Validators.required,]),
+      Name:['', [Validators.required, ]],
+      Email: new FormControl('', [Validators.required, Validators.email]),
+      PhoneNumber: new FormControl('', [Validators.required,]),
+      Password: new FormControl('', [Validators.required,]),
         cpassword: new FormControl('', [Validators.required,]),
         address: new FormControl('', [Validators.required]),
         mpan: new FormControl('',),
-        pdik: new FormControl('',),
-        mdik: new FormControl('',),
-        adik: new FormControl('',),
-        uflex: new FormControl('',),
-        dflex: new FormControl('',),
-        ftype: new FormControl('',),
+        PeakDemand: new FormControl('',),
+        MinimumDemand: new FormControl('',),
+        AnnualDemand: new FormControl('',),
+        UpwardFlexiblity: new FormControl('',),
+        DownwardFlexiblity: new FormControl('',),
+        FlexiblityType: new FormControl('',),
       }
       ,
       {
