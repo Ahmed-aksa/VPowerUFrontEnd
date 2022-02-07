@@ -19,14 +19,14 @@
             </div>
           </a>
 
-          <div id="line-design" class=" separator">
+          <div  id="line-design" class=" separator">
           </div>
           <a id="image">
             <div id="NextID-" class="circle-other">
               <img src="assets/images/contact-info.svg" alt="circle">
             </div>
           </a>
-          <a style="display: none;" id="image-1">
+          <a  style="display: none;" id="image-1">
             <div class="circle-other-second">
               <img src="assets/images/contact-info.svg" alt="circle">
             </div>
@@ -169,7 +169,7 @@
           </div>
         </div>
 
-        <div id="second-step" style="display: none;">
+        <div  id="second-step" style="display: none;">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon- name mb-2">
@@ -284,10 +284,14 @@
               </button>
             </a>
             <a id="NextID">
-              <button  class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+              <button *ngIf="signupForm.valid" class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
                Next
               </button>
+
             </a>
+            <button *ngIf="!signupForm.valid" class="btn btn-primary btn-next " ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+              Next
+            </button>
           </div>
         </div>
       </form>

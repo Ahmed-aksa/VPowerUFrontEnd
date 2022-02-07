@@ -43,7 +43,6 @@ export class SignupComponent implements OnInit {
   get f() { return this.signupForm.controls; }
 
   onSubmit() {
-    debugger
     this.submited = true;
 }
 
@@ -62,4 +61,5 @@ export class SignupComponent implements OnInit {
       }
     }
   }
+
 }
