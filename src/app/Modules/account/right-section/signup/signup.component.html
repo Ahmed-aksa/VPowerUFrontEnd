@@ -285,13 +285,13 @@
             </a>
             <a id="NextID">
               <button *ngIf="signupForm.valid" class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-               Next
+                Next
               </button>
-
+              <button *ngIf="!signupForm.valid" class="btn btn-primary btn-next " ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+                Next
+              </button>
             </a>
-            <button *ngIf="!signupForm.valid" class="btn btn-primary btn-next " ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-              Next
-            </button>
+            
           </div>
         </div>
       </form>

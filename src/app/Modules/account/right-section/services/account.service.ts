@@ -7,6 +7,8 @@ import {environment} from "../../../../../environments/environment";
   providedIn: 'root'
 })
 export class AccountService {
+
+constructor(private http: HttpClient){}
   //
   // constructor(private http: HttpClient , private _router: Router) {
   // }
@@ -16,9 +18,9 @@ export class AccountService {
   // }
   //
   //
-  // register(user: any) {
-  //   return this.http.post<any>(environment.USER_API_URL + 'user/auth/sign-up', user);
-  // }
+  register(user: any) {
+    return this.http.post<any>(environment.USER_API_URL + "RegisterUser", user);
+  }
   //
   // loggedIn() {
   //   return !!localStorage.getItem('token');
