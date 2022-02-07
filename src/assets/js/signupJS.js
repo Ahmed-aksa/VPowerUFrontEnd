@@ -31,17 +31,17 @@ $(document).ready(function() {
   });
 
 
-  $('#NextID-').click(function() {
-    $("#first-step").css("display", "none");
-    $("#second-step").css("display", "block");
-
-    $("#line-design").removeClass("line-color-first");
-    $('#line-design').addClass('line-color-second');
-
-    $("#image").css("display", "none");
-    $("#image-1").css("display", "block");
-
-  });
+  // $('#NextID-').click(function() {
+  //   $("#first-step").css("display", "none");
+  //   $("#second-step").css("display", "block");
+  //
+  //   $("#line-design").removeClass("line-color-first");
+  //   $('#line-design').addClass('line-color-second');
+  //
+  //   $("#image").css("display", "none");
+  //   $("#image-1").css("display", "block");
+  //
+  // });
 
   $('#backbnt-').click(function() {
     $("#first-step").css("display", "block");
