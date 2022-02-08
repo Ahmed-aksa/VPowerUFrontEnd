@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  USER_API_URL: 'https://localhost:44377/api/home/'
+  USER_API_URL: 'http://10.250.10.29/VPowerU_UserManagement/api/home/'
 };
 
 /*

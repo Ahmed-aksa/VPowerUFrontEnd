@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginForm = this._formBuilder.group({
-      email: new FormControl('',[Validators.required, Validators.email]),
-      password: new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(10)])
+      UserName: new FormControl('',[Validators.required, Validators.email]),
+      Password: new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(10)])
     });
 
   }
@@ -48,9 +48,10 @@ export class LoginComponent implements OnInit {
     //
     //
     // });
-    if (this.loginForm.valid)
-    console.log(this.loginForm.value)
+    if (this.loginForm.valid){
+      this.account_service.login(this.loginForm.value).subscribe((result)=>{
+        console.log(result)
+       })
+    }
   }
-
-
 }

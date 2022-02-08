@@ -8,14 +8,14 @@ import {environment} from "../../../../../environments/environment";
 })
 export class AccountService {
 
-constructor(private http: HttpClient){}
+// constructor(private http: HttpClient){}
   //
-  // constructor(private http: HttpClient , private _router: Router) {
-  // }
+  constructor(private http: HttpClient , private _router: Router) {
+  }
   //
-  // login(user: any) {
-  //   return this.http.post<any>(environment.USER_API_URL + 'user/auth/sign-in', user);
-  // }
+  login(user: any) {
+    return this.http.post<any>(environment.USER_API_URL + 'LoginUser', user);
+  }
   //
   //
   register(user: any) {

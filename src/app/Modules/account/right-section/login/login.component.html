@@ -20,13 +20,13 @@
               <img src="assets/images/email.svg" alt="emailicon">
 
               <div class="form-group-">
-                <input id="email" formControlName="email" name="email" type="text" placeholder="Enter Email">
+                <input id="email" formControlName="UserName" name="email" type="text" placeholder="Enter Email">
 
               </div>
 
             </div>
             <span class="text-danger"
-                  *ngIf="(loginFormControl.email.touched) && (loginFormControl.email.invalid) && loginFormControl.email.errors?.required">
+                  *ngIf="(loginFormControl.UserName.touched) && (loginFormControl.UserName.invalid) && loginFormControl.UserName.errors?.required">
                                 Email is Required
                             </span>
             <div class="ry-field-with-icon email">
@@ -34,11 +34,11 @@
 
               <label>Password</label>
               <div class="form-group-">
-                <input id="password" formControlName="password" type="password" placeholder="*****">
+                <input id="password" formControlName="Password" type="password" placeholder="*****">
               </div>
             </div>
             <span class="text-danger"
-                  *ngIf="(loginFormControl.password.touched) && loginFormControl.password.errors?.required">
+                  *ngIf="(loginFormControl.Password.touched) && loginFormControl.Password.errors?.required">
                                 Password is Required
                             </span>
             <div class="row mt-3">

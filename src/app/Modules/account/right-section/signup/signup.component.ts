@@ -36,12 +36,15 @@ export class SignupComponent implements OnInit {
       }
       ,
       {
-        validators: this.MustMatch('password','cpassword')
+        validators: this.MustMatch('Password','cpassword')
       });
   }
 
   get f() { return this.signupForm.controls; }
 
+  Next(){
+    this.submited = true;
+  }
   onSubmit() {
     this.submited = true;
     if(this.signupForm.valid){
@@ -52,9 +55,9 @@ export class SignupComponent implements OnInit {
     }
 }
 
- MustMatch(password: string, cPassword: string) {
+ MustMatch(Password: string, cPassword: string) {
     return(formGroup: FormGroup) => {
-      const control = formGroup.controls[password];
+      const control = formGroup.controls[Password];
       const matchingControl = formGroup.controls[cPassword];
       if (matchingControl.errors && !matchingControl.errors.MustMatch){
         return
