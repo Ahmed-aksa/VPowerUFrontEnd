@@ -30,19 +30,17 @@ export class LoginComponent implements OnInit {
   get loginFormControl() {
     return this.loginForm.controls;
   }
-  
+
   loginUser() {
-    this.account_service.login(this.loginForm.value).subscribe((data) => {
-    
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      this.router.navigate(['dashboard']);
-      localStorage.setItem('token', data.token); 
-    });
-    if (this.loginForm.valid){
-      this.account_service.login(this.loginForm.value).subscribe((result)=>{
-        console.log(result)
-       })
+    if (this.loginForm.valid) {
+      this.account_service.login(this.loginForm.value).subscribe((data) => {
+
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        this.router.navigate(['dashboard']);
+        localStorage.setItem('token', data.token);
+      });
+
     }
   }
 }

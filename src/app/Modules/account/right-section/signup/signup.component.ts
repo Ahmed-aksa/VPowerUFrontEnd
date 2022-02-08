@@ -50,6 +50,9 @@ export class SignupComponent implements OnInit {
     if(this.signupForm.valid){
 
       this.account_service.register(this.signupForm.value).subscribe((result)=>{
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token);
+        this.router.navigate(['']);
        console.log(result)
       })
     }
