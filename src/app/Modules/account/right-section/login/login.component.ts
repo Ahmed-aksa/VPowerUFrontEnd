@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
+  toaster: any;
 
   constructor(
     private account_service: AccountService,
@@ -31,23 +32,13 @@ export class LoginComponent implements OnInit {
   }
   
   loginUser() {
-    // this.account_service.login(this.loginForm.value).subscribe((data) => {
-    //
-    //   localStorage.setItem('token', data.token);
-    //   localStorage.setItem('user', JSON.stringify(data.user));
-    //   this.toaster.success(data.message);
-    //   this.router.navigate(['dashboard']);
-    //   localStorage.setItem('token', data.token);
-    // }, (error: { error: { message: any; }; }) => {
-    //   if (error.error.message) {
-    //     this.toaster.error(error.error.message);
-    //   } else {
-    //     this.toaster.error("Something wrong happened, please try again")
-    //   }
-    //
-    //
-    //
-    // });
+    this.account_service.login(this.loginForm.value).subscribe((data) => {
+    
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      this.router.navigate(['dashboard']);
+      localStorage.setItem('token', data.token); 
+    });
     if (this.loginForm.valid){
       this.account_service.login(this.loginForm.value).subscribe((result)=>{
         console.log(result)
