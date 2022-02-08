@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // if (this.account_service.isLoggedIn()) {
+    //   this.router.navigate(['/dashboard']);
+    // }
     this.loginForm = this._formBuilder.group({
-      UserName: new FormControl('',[Validators.required, Validators.email]),
-      Password: new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(10)])
+      UserName: new FormControl('', [Validators.required, Validators.email]),
+      Password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)])
     });
 
   }
@@ -31,16 +33,38 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
+  // loginUser() {
+  //   if (this.loginForm.valid) {
+  //     this.account_service.login(this.loginForm.value).subscribe((data) => {
+  //
+  //       localStorage.setItem('token', data.token);
+  //       localStorage.setItem('user', JSON.stringify(data.user));
+  //       this.router.navigate(['dashboard']);
+  //       localStorage.setItem('token', data.token);
+  //       console.log(data);
+  //     });
+  //
+  //   }
+  // }
+
   loginUser() {
-    if (this.loginForm.valid) {
-      this.account_service.login(this.loginForm.value).subscribe((data) => {
+    this.account_service.login(this.loginForm.value).subscribe((data) => {
 
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user', JSON.stringify(data.user));
-        this.router.navigate(['dashboard']);
-        localStorage.setItem('token', data.token);
-      });
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      console.log(data.message);
+      this.router.navigate(['dashboard']);
+      localStorage.setItem('token', data.token);
+    }, (error) => {
+      if (error.error.message) {
+       console.log(error.error.message);
+      } else {
+        console.log("Something wrong happened, please try again")
+      }
 
-    }
+
+
+    });
   }
+
 }

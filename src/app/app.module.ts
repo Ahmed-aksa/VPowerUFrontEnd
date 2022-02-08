@@ -5,11 +5,13 @@ import {AccountComponent} from "./Modules/account/account.component";
 import {AccountModule} from "./Modules/account/account.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountComponent
+    AccountComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,9 @@ export class AccountService {
   register(user: any) {
     return this.http.post<any>(environment.USER_API_URL + "RegisterUser", user);
   }
+  isLoggedIn(){
+    return  localStorage.getItem('token');
+  }
   //
   // loggedIn() {
   //   return !!localStorage.getItem('token');
