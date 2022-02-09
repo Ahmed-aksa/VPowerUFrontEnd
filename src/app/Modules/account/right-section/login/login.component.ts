@@ -50,6 +50,10 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.account_service.login(this.loginForm.value).subscribe((data) => {
+      if (data.token !== null || undefined) {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['dashboard']);
+      }
 
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
