@@ -3,6 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import { Router } from '@angular/router';
 import {environment} from "../../../../../environments/environment";
 
+import { SignupComponent } from '../signup/signup.component';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,12 +21,13 @@ export class AccountService {
   }
   //
   //
-  register(user: any) {
+  register(user: any) : Observable<any> {
     return this.http.post<any>(environment.USER_API_URL + "RegisterUser", user);
   }
   isLoggedIn(){
     return  localStorage.getItem('token');
   }
+
   //
   // loggedIn() {
   //   return !!localStorage.getItem('token');

@@ -6,7 +6,7 @@ import {AccountModule} from "./Modules/account/account.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
     AccountModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

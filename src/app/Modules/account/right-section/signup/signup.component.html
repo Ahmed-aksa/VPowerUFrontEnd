@@ -34,7 +34,7 @@
 
         </div>
 
-        <div id="first-step" >
+        <div *ngIf="isStep==1"  >
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon name mb-2">
@@ -169,7 +169,7 @@
           </div>
         </div>
 
-        <div  id="second-step" style="display: none;">
+        <div  *ngIf="isStep==2" >
           <div class="row">
             <div class="col-lg-6 col-sm-12">
               <div class="ry-field-with-icon- name mb-2">
@@ -279,22 +279,18 @@
         <div class="row">
           <div class="col-lg-12 col-sm-12 text-end btns">
             <a id="backbnt">
-              <button  class="btn back-btn mx-2" type="button"><img class="me-2"
+              <button  *ngIf="isStep==2"  (click)="isStep=1"  class="btn back-btn mx-2" type="button"><img class="me-2"
                   src="assets/images/back.svg" alt="backicon">Back
               </button>
             </a>
             <a id="NextID">
-              <button *ngIf="signupForm.valid" class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-                Next
+              <button  class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
+                <span *ngIf="isStep==1">Next</span> 
+                <span *ngIf="isStep==2">Submit</span> 
+                
               </button>
 
             </a>
-            <button *ngIf="submited && signupForm.valid" class="btn btn-primary m-2" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-              Submit
-            </button>
-            <button *ngIf="!signupForm.valid" class="btn btn-primary btn-next " ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-              Next
-            </button>
           </div>
         </div>
       </form>
@@ -304,8 +300,58 @@
         [routerLink]="['/login']">Login</a></p>
 
   </div>
-
-
-
-
 </section>
+
+
+<div class="overlay" style="z-index: 1;" *ngIf="popup">
+  
+  <div class="popup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="col-xl-12 p-0">
+          <div class=" d-grid theme-form">
+            <form id="loginForm" class=" login-form" method="post">
+              <div class="row g-0 ">
+                <div class="col-10 col-lg-9 mx-auto text-center">
+                  <div class="logo mb-5 mb-md-0">
+                    <a href="index.html" title="vpoweru"><img class="logo-design" src="assets/images/VpowerU-Logo-01.svg" alt="mainlogo"></a>
+                  </div>
+                </div>
+              </div>
+              <h3 class="fw-bold mb-2 text-center mt-4">Confirmation</h3>
+              <p class="text-center">Please Enter the code we sent to the email inaam*******.com</p>
+              <div class="name mb-3 position-relative main-login">
+                <div class="d-flex" style="text-align: center;">
+                  <div>
+                    <input type="text"  #txt1 maxlength="1" (keyup)="move($event, '', txt1, txt2)" style="border-bottom: 1px solid; width: 80%;">
+                  </div>
+                  <div>
+                    <input type="text" #txt2 maxlength="1" (keyup)="move($event, txt1, txt2, txt3)"  style="border-bottom: 1px solid; width: 80%;">
+                  </div>
+                  <div>
+                    <input type="text" #txt3 maxlength="1" (keyup)="move($event, txt2, txt3, txt4)"  style="border-bottom: 1px solid; width: 80%;">
+                  </div>
+                  <div>
+                    <input type="text" #txt4 maxlength="1" (keyup)="move($event, txt3, txt4, '')"  style="border-bottom: 1px solid; width: 80%;">
+                  </div>
+                </div>
+  
+              </div>
+              <div class="d-grid my-2">
+                <button type="button" class="btn btn-labeled btn-primary w-100">
+                  <span class="btn-label">                 </span>Confirm</button>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+</div>
