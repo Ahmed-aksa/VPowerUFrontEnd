@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { finalize } from "rxjs/operators";
 import {NgxOtpInputConfig} from "ngx-otp-input";
+import {templateJitUrl} from "@angular/compiler";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -74,7 +75,7 @@ export class SignupComponent implements OnInit {
         this.account_service.register(this.signupForm.value).pipe(finalize(() => {
           this.spinner.hide()
         })).subscribe((result) => {
-
+// this.popup=true;
         })
       }
 
@@ -123,7 +124,8 @@ export class SignupComponent implements OnInit {
   }
 
   handleFillEvent(value: string): void {
-    console.log(value);
+    this.otp = value;
+    console.log(this.otp);
   }
 
 }
