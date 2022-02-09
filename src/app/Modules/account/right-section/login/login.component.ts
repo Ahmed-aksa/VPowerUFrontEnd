@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     });
 
   }
+
   get loginFormControl() {
     return this.loginForm.controls;
   }
@@ -52,18 +53,10 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-      console.log(data.message);
       this.router.navigate(['dashboard']);
       localStorage.setItem('token', data.token);
     }, (error) => {
-      if (error.error.message) {
-       console.log(error.error.message);
-      } else {
-        console.log("Something wrong happened, please try again")
-      }
-
-
-
+      console.log((error && error.error.message) ? error.error.message : 'Something wrong happened, please try again');
     });
   }
 
