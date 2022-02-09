@@ -49,15 +49,15 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.account_service.login(this.loginForm.value).subscribe((data) => {
+      if (data.token !== null || undefined) {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['dashboard']);
+      }
 
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      console.log(data.message);
-      this.router.navigate(['dashboard']);
-      localStorage.setItem('token', data.token);
     }, (error) => {
-      if (error.error.message) {
-       console.log(error.error.message);
+      if (error) {
+        debugger
+       console.log(error.message);
       } else {
         console.log("Something wrong happened, please try again")
       }
