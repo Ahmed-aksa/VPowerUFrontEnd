@@ -54,11 +54,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', data.token);
         this.router.navigate(['dashboard']);
       }
-
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      this.router.navigate(['dashboard']);
-      localStorage.setItem('token', data.token);
     }, (error) => {
       console.log((error && error.error.message) ? error.error.message : 'Something wrong happened, please try again');
     });
