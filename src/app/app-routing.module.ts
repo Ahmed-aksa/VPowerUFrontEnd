@@ -12,11 +12,10 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {path: 'account', canActivate: [LoginGuard],  loadChildren: () => import('./Modules/account/account.module').then(m => m.AccountModule)}
+      {path: 'account', canActivate: [LoginGuard],  loadChildren: () => import('./Modules/account/account.module').then(m => m.AccountModule)},
+      {path: 'dashboard', canActivate: [AuthGuard], loadChildren: () => import('./Modules/dashboard/dashboard.module').then(m => m.DashboardModule)},
     ]
    },
-  {path: 'dashboard', canActivate: [AuthGuard], loadChildren: () => import('./Modules/dashboard/dashboard.module').then(m => m.DashboardModule)},
-  {path: 'account', loadChildren: () => import('./Modules/account/account.module').then(m => m.AccountModule)},
   {
     path: '**' , component: ErrorComponent
   }
