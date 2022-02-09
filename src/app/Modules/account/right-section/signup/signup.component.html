@@ -285,9 +285,9 @@
             </a>
             <a id="NextID">
               <button  class="btn btn-primary btn-next" ><img class="me-2" src="assets/images/next.svg" alt="nexticon">
-                <span *ngIf="isStep==1">Next</span> 
-                <span *ngIf="isStep==2">Submit</span> 
-                
+                <span *ngIf="isStep==1">Next</span>
+                <span *ngIf="isStep==2">Submit</span>
+
               </button>
 
             </a>
@@ -304,7 +304,7 @@
 
 
 <div class="overlay" style="z-index: 1;" *ngIf="popup">
-  
+
   <div class="popup">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -322,26 +322,16 @@
               <p class="text-center">Please Enter the code we sent to the email inaam*******.com</p>
               <div class="name mb-3 position-relative main-login">
                 <div class="d-flex" style="text-align: center;">
-                  <div>
-                    <input type="text"  #txt1 maxlength="1" (keyup)="move($event, '', txt1, txt2)" style="border-bottom: 1px solid; width: 80%;">
-                  </div>
-                  <div>
-                    <input type="text" #txt2 maxlength="1" (keyup)="move($event, txt1, txt2, txt3)"  style="border-bottom: 1px solid; width: 80%;">
-                  </div>
-                  <div>
-                    <input type="text" #txt3 maxlength="1" (keyup)="move($event, txt2, txt3, txt4)"  style="border-bottom: 1px solid; width: 80%;">
-                  </div>
-                  <div>
-                    <input type="text" #txt4 maxlength="1" (keyup)="move($event, txt3, txt4, '')"  style="border-bottom: 1px solid; width: 80%;">
-                  </div>
+                  <ngx-otp-input  [config]="otpInputConfig" (otpChange)="handeOtpChange($event)"  (fill)="handleFillEvent($event)">
+                  </ngx-otp-input>
                 </div>
-  
+
               </div>
               <div class="d-grid my-2">
                 <button type="button" class="btn btn-labeled btn-primary w-100">
                   <span class="btn-label">                 </span>Confirm</button>
               </div>
-  
+
             </form>
           </div>
         </div>
@@ -353,5 +343,5 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  
+
 </div>

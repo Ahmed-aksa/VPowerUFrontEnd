@@ -4,16 +4,30 @@ import { AccountService } from "../services/account.service";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { finalize } from "rxjs/operators";
+import {NgxOtpInputConfig} from "ngx-otp-input";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  otpInputConfig: NgxOtpInputConfig = {
+    otpLength: 4,
+    autofocus: true,
+    classList: {
+      inputBox: 'my-super-box-class' ,
+      input: 'my-super-class',
+      inputFilled: 'my-super-filled-class',
+      inputDisabled: 'my-super-disable-class',
+      inputSuccess: 'my-super-success-class',
+      inputError: 'my-super-error-class',
+    },
+  };
   signupForm!: FormGroup
   submited = false;
   passwordMatch = false;
   popup = false;
+  otp: any = '';
   isStep = 1;
   constructor(
     private account_service: AccountService,
@@ -81,9 +95,10 @@ export class SignupComponent implements OnInit {
     if(e.key === "Backspace"){
       if(p != ""){
         p.focus();
-      }    
+      }
     }
-    //console.log(value.length);
+    this.otp = "" + this.otp + e.key;
+    console.log(this.otp);
   }
 
 
@@ -101,6 +116,14 @@ export class SignupComponent implements OnInit {
         matchingControl.setErrors(null);
       }
     }
+  }
+
+  handeOtpChange(value: string[]): void {
+    console.log(value);
+  }
+
+  handleFillEvent(value: string): void {
+    console.log(value);
   }
 
 }

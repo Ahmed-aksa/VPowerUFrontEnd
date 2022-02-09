@@ -8,6 +8,7 @@ import { LeftSectionComponent } from './left-section/left-section.component';
 import { RightSectionComponent } from './right-section/right-section.component';
 import {CommonModule} from "@angular/common";
 import { FormsModule } from '@angular/forms';
+import {NgxOtpInputModule} from "ngx-otp-input";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
+    NgxOtpInputModule,
   ],
   declarations: [
 

@@ -9,8 +9,8 @@
   visibility: visible;
     opacity: 1;
   }
-  
-  
+
+
   .popup {
     margin: 70px auto;
     padding: 20px;
@@ -20,7 +20,7 @@
     position: relative;
     transition: all 5s ease-in-out;
   }
-  
+
   .popup h2 {
     margin-top: 0;
     color: #333;
@@ -44,11 +44,14 @@
     max-height: 30%;
     overflow: auto;
   }
-  
+
   @media screen and (max-width: 700px){
-  
+
     .popup{
       width: 70%;
     }
   }
+//ngx-otp-input {
+//    border-bottom: 1px solid; width: 80%;
+//}
 
