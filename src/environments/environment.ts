@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  USER_API_URL: 'http://10.250.10.29/VPowerU_UserManagement/api/home/'
+  USER_API_URL: 'http://10.250.10.29/VPowerU_UserManagement/api/account/v1/',
+  OTP: "http://10.250.10.29/VPowerU_UserManagement/api/account/v1/VerifyOTPAsync"
 };
 
 /*

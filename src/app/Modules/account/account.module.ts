@@ -9,16 +9,18 @@ import { RightSectionComponent } from './right-section/right-section.component';
 import {CommonModule} from "@angular/common";
 import { FormsModule } from '@angular/forms';
 import {NgxOtpInputModule} from "ngx-otp-input";
+import {NgOtpInputModule} from "ng-otp-input";
 
 
 @NgModule({
-  imports: [
-    AccountRoutingModule,
-    ReactiveFormsModule,
-    CommonModule,
-    FormsModule,
-    NgxOtpInputModule,
-  ],
+    imports: [
+        AccountRoutingModule,
+        ReactiveFormsModule,
+        CommonModule,
+        FormsModule,
+        NgxOtpInputModule,
+        NgOtpInputModule,
+    ],
   declarations: [
 
 

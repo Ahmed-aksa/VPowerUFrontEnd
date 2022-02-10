@@ -297,7 +297,7 @@
     </div>
 
     <p class="text-center text-muted py-2">Already have an account?<a class="link-primary fw-bold mx-2"
-        [routerLink]="['/login']">Login</a></p>
+        [routerLink]="['']">Login</a></p>
 
   </div>
 </section>
@@ -319,17 +319,21 @@
                 </div>
               </div>
               <h3 class="fw-bold mb-2 text-center mt-4">Confirmation</h3>
-              <p class="text-center">Please Enter the code we sent to the email inaam*******.com</p>
+              <p class="text-center">Please Enter the code we sent to the email Ghazan*******.com</p>
               <div class="name mb-3 position-relative main-login">
                 <div class="d-flex" style="text-align: center;">
-                  <ngx-otp-input  [config]="otpInputConfig" (otpChange)="handeOtpChange($event)"  (fill)="handleFillEvent($event)">
-                  </ngx-otp-input>
+                  <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
                 </div>
 
               </div>
+              <div>Time left = <span #time id="timer"></span></div>
               <div class="d-grid my-2">
-                <button type="button" class="btn btn-labeled btn-primary w-100">
-                  <span class="btn-label">                 </span>Confirm</button>
+                <button *ngIf="resendBtn===false" (click)="submitOTP()" type="button" class="btn btn-labeled btn-primary w-100">
+                  <span  class="btn-label">                 </span>Confirm</button>
+              </div>
+              <div class="d-grid my-2">
+                <button *ngIf="resendBtn" (click)="onSubmit()" type="button" class="btn btn-labeled btn-primary w-100">
+                  <span  class="btn-label">                 </span>Resend</button>
               </div>
 
             </form>

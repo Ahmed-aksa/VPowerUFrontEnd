@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NgOtpInputModule } from  'ng-otp-input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     BrowserAnimationsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    NgOtpInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

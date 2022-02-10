@@ -38,9 +38,9 @@ export class AccountService {
   //
   // }
   //
-  // sendOTP(otp_data: any) {
-  //   return this.http.post<any>(environment.USER_API_URL + 'user/auth/send-otp', otp_data);
-  // }
+  sendOTP(otp: any) {
+    return this.http.put<any>(environment.OTP , otp);
+  }
   //
   // logOut() {
   //   localStorage.removeItem('token');
