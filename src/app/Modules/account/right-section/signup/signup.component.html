@@ -326,9 +326,9 @@
                 </div>
 
               </div>
-              <div>Time left = <span #time id="timer"></span></div>
+              <div>Time left ={{timeLeft}}</div>
               <div class="d-grid my-2">
-                <button *ngIf="resendBtn===false" (click)="submitOTP()" type="button" class="btn btn-labeled btn-primary w-100">
+                <button *ngIf="!resendBtn" (click)="submitOTP()" type="button" class="btn btn-labeled btn-primary w-100">
                   <span  class="btn-label">                 </span>Confirm</button>
               </div>
               <div class="d-grid my-2">

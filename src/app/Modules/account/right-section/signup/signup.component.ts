@@ -4,6 +4,7 @@ import {AccountService} from "../services/account.service";
 import {Router} from "@angular/router";
 import {NgxSpinnerService} from 'ngx-spinner';
 import {finalize} from "rxjs/operators";
+import {templateJitUrl} from "@angular/compiler";
 
 @Component({
   selector: 'app-signup',
@@ -34,7 +35,7 @@ export class SignupComponent implements OnInit {
   otpVerfied = false;
   private userId: any;
   private interval: any;
-  private timeLeft = 10;
+  public timeLeft = 60;
   resendBtn = false;
 
 
@@ -67,6 +68,7 @@ export class SignupComponent implements OnInit {
       });
   }
 
+
   get f() { return this.signupForm.controls; }
 
 
@@ -82,8 +84,8 @@ export class SignupComponent implements OnInit {
           this.popup = true;
           this.startTimer();
           this.userId = result.userId;
+          this.resendBtn = false
         });
-         this.resendBtn = false;
       }
 
       else {
@@ -150,14 +152,14 @@ export class SignupComponent implements OnInit {
         this.timeLeft--;
       } else {
         this.pauseTimer()
-        //this.timeLeft = 10;
+        this.btnEnable();
+        this.timeLeft = 60;
       }
     }, 1000)
   }
 
   pauseTimer() {
     clearInterval(this.interval);
-    this.resendBtn = true;
   }
 
   submitOTP() {
@@ -173,4 +175,15 @@ export class SignupComponent implements OnInit {
     })
   }
 
+  btnEnable()
+  {
+    if (this.timeLeft === 0)
+    {
+      this.resendBtn = true
+      console.log("im here in true")
+    }
+    else
+      this.resendBtn = false;
+    console.log("im here in false")
+  }
 }
