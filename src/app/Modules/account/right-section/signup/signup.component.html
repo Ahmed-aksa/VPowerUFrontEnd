@@ -321,18 +321,18 @@
               <h3 class="fw-bold mb-2 text-center mt-4">Confirmation</h3>
               <p class="text-center">Please Enter the code we sent to the email Ghazan*******.com</p>
               <div class="name mb-3 position-relative main-login">
-                <div class="d-flex" style="text-align: center;">
+                <div class="d-flex m-5" style="text-align: center;">
                   <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
                 </div>
 
               </div>
-              <div>Time left ={{timeLeft}}</div>
+              <div>Time left = {{timeLeft}}</div>
               <div class="d-grid my-2">
                 <button *ngIf="!resendBtn" (click)="submitOTP()" type="button" class="btn btn-labeled btn-primary w-100">
                   <span  class="btn-label">                 </span>Confirm</button>
               </div>
               <div class="d-grid my-2">
-                <button *ngIf="resendBtn" (click)="onSubmit()" type="button" class="btn btn-labeled btn-primary w-100">
+                <button *ngIf="resendBtn" (click)="onResendEmail()" type="button" class="btn btn-labeled btn-primary w-100">
                   <span  class="btn-label">                 </span>Resend</button>
               </div>
 

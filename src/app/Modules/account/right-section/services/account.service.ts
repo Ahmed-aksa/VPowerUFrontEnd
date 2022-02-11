@@ -39,7 +39,13 @@ export class AccountService {
   // }
   //
   sendOTP(otp: any) {
-    return this.http.put<any>(environment.OTP , otp);
+    return this.http.put<any>(environment.USER_API_URL +'VerifyOTPAsync' , otp);
+  }
+  resendEmail(email: any) {
+    return this.http.post<any>(environment.USER_API_URL + 'ResendEmail' , email);
+  }
+  forgot_password(email: string) {
+    return this.http.post<any>(environment.USER_API_URL + 'ForgotPassword' , email);
   }
   //
   // logOut() {

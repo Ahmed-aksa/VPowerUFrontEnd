@@ -22,7 +22,8 @@ export class SignupComponent implements OnInit {
     placeholder: '',
     inputStyles: {
       'width': '50px',
-      'height': '50px'
+      'height': '50px',
+      'margin': '7px'
     }
   };
   signupForm!: FormGroup
@@ -36,6 +37,7 @@ export class SignupComponent implements OnInit {
   private userId: any;
   private interval: any;
   public timeLeft = 60;
+  email: any
   resendBtn = false;
 
 
@@ -84,6 +86,7 @@ export class SignupComponent implements OnInit {
           this.popup = true;
           this.startTimer();
           this.userId = result.userId;
+          this.email = result.email;
           this.resendBtn = false
         });
       }
@@ -112,37 +115,7 @@ export class SignupComponent implements OnInit {
 
   onOtpChange(otp: any) {
     this.otp = otp;
-    // let timerOn = true;
-    //
-    // const timer = (remaining: any) => {
-    //   let m: string | number = Math.floor(remaining / 60);
-    //   let s: string | number = remaining % 60;
-    //
-    //   m = m < 10 ? '0' + m : m;
-    //   s = s < 10 ? '0' + s : s;
-    //
-    //   // (<HTMLInputElement>document.getElementById("timer")).value = m + ':' + s;
-    //   this.time.nativeElement.value = m + ':' + s;
-    //     remaining -= 1;
-    //   console.log(this.time.nativeElement.value);
-    //
-    //   if (remaining >= 0 && timerOn) {
-    //     setTimeout(function () {
-    //       timer(remaining);
-    //     }, 1000);
-    //     return;
-    //   }
-    //
-    //   if (!timerOn) {
-    //     // Do validate stuff here
-    //     return;
-    //   }
-    //
-    //   // Do timeout stuff here
-    //   alert('Timeout for otp');
-    //
-    // }
-    // timer(60);
+
   }
 
   startTimer() {
@@ -171,7 +144,7 @@ export class SignupComponent implements OnInit {
         this.otpVerfied = true;
         this.popup = false;
         this.router.navigate(['login']);
-      } else alert("Incorrect OTP");
+      }
     })
   }
 
@@ -185,5 +158,18 @@ export class SignupComponent implements OnInit {
     else
       this.resendBtn = false;
     console.log("im here in false")
+  }
+
+  onResendEmail() {
+    this.spinner.show();
+    this.account_service.resendEmail(this.email).pipe(finalize(() => {
+      this.spinner.hide()
+
+    })).subscribe((result) => {
+      this.popup = true;
+      this.startTimer();
+      this.userId = result.userId;
+      this.resendBtn = false
+    });
   }
 }
