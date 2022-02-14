@@ -32,12 +32,13 @@ export class AccountService {
   // loggedIn() {
   //   return !!localStorage.getItem('token');
   // }
+
   // loggedOut() {
   //   localStorage.removeItem('token');
   //   return this._router.navigate(['/login']);
-  //
-  // }
-  //
+  //}
+  
+  
   sendOTP(otp: any) {
     return this.http.put<any>(environment.USER_API_URL +'VerifyOTPAsync' , otp);
   }

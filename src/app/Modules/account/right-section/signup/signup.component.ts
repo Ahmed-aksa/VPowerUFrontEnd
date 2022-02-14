@@ -143,7 +143,7 @@ export class SignupComponent implements OnInit {
       if (result.isSuccess) {
         this.otpVerfied = true;
         this.popup = false;
-        this.router.navigate(['login']);
+        this.router.navigate(['/account/login']);
       }
     })
   }
