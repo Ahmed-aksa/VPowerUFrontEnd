@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   USER_API_URL: 'http://10.250.10.29/VPowerU_UserManagement/api/account/v1/',
+  // USER_API_EMAIL: 'http://10.250.10.29/VPowerU_UserManagement/api/account/v1/ForgotPassword',
   OTP: "http://10.250.10.29/VPowerU_UserManagement/api/account/v1/"
 };
 

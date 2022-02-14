@@ -29,9 +29,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   submit() {
     this.spinner.show();
-    this.email = this.forgotPasswordForm.value.email.toString();
     debugger
-    this.account_service.forgot_password(this.email).pipe(finalize(() => {
+    this.account_service.forgot_password(this.forgotPasswordForm.value.email).pipe(finalize(() => {
       this.spinner.hide()
 
     })).subscribe((result) => {
