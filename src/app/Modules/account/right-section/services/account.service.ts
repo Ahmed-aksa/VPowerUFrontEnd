@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import { Router } from '@angular/router';
 import {environment} from "../../../../../environments/environment";
 
@@ -42,10 +42,10 @@ export class AccountService {
     return this.http.put<any>(environment.USER_API_URL +'VerifyOTPAsync' , otp);
   }
   resendEmail(email: any) {
-    return this.http.post<any>(environment.USER_API_URL + 'ResendEmail' , email);
+    return this.http.post<any>(environment.USER_API_URL + 'ResendEmail' , {"email": email});
   }
-  forgot_password(email: string) {
-    return this.http.post<any>(environment.USER_API_URL + 'ForgotPassword' , email);
+  forgot_password(email: any) {
+    return this.http.post<any>(environment.USER_API_URL + 'ForgotPassword', {"email": email});
   }
   //
   // logOut() {
